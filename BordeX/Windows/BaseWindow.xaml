@@ -1,0 +1,79 @@
+﻿<Window x:Class="BordeX.Windows.BaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BordeX.Windows"
+        mc:Ignorable="d"
+        Title="BordeX Configuration" Height="630" Width="800" Background="Transparent" Icon="/BordeX;component/Assets/logo.ico" ShowInTaskbar="False" Topmost="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BordeX;component/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Name="Main" Background="#40000000">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Column="0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="1, 0" EndPoint="-2, 0">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#F0000000" Offset="1"/>
+                            <GradientStop Color="Transparent" Offset="0.10"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Grid Name="TopGrid" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <Button Name="StorePageButton" Grid.Column="0" Style="{StaticResource ButtonAlt}" Click="StorePageButton_Click" ToolTip="Store Page" />
+                <Image Grid.Column="0" Width="22" Height="22" Stretch="Fill" Source="/BordeX;component/Assets/logo.png" IsHitTestVisible="False" />
+                <TextBlock Name="TitleText" Grid.Column="1" Style="{StaticResource ButtonTextStyle}" IsHitTestVisible="False" />
+                <Button Name="TwitterButton" Grid.Column="2" BorderThickness="0" Style="{StaticResource ButtonAlt}" Click="TwitterButton_Click" ToolTip="Stryxus's Twitter" />
+                <Image Grid.Column="2" Width="26" Height="26" Stretch="Fill" Source="/BordeX;component/Assets/TwitterLogo.png" IsHitTestVisible="False" />
+                <Button Name="WebsiteButton" Grid.Column="3" BorderThickness="0" Style="{StaticResource ButtonAlt}" Click="WebsiteButton_Click" ToolTip="BordeX Webpage" IsEnabled="False" />
+                <Image Grid.Column="3" Width="20" Height="20" Stretch="Fill" Source="/BordeX;component/Assets/globe.png" IsHitTestVisible="False" />
+                <Button Name="GithubButton" Grid.Column="4" BorderThickness="0" Style="{StaticResource ButtonAlt}" Click="GithubButton_Click" ToolTip="BordeX Repository Contributors" />
+                <Image Grid.Column="4" Width="20" Height="20" Stretch="Fill" Source="/BordeX;component/Assets/GitHub-Mark.png" IsHitTestVisible="False" />
+                <Rectangle Grid.Column="5" Fill="#50FF0000" />
+                <Button Name="CloseButton" Grid.Column="5" BorderThickness="0" Style="{StaticResource ButtonAlt}" Click="CloseButton_Click" ToolTip="Close BordeX's Window" />
+                <TextBlock Grid.Column="5" FontFamily="Segoe UI" FontSize="20" FontWeight="SemiBold" Foreground="White" HorizontalAlignment="Center" Text="X" IsHitTestVisible="False" />
+            </Grid>
+            <Grid Name="NavigationBar" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ToggleButton Name="NewsNavButton" Grid.Column="0" Click="HomeNavButton_Click" />
+                <TextBlock Grid.Column="0" Style="{StaticResource ButtonTextStyle}" Text="News and Changelogs" IsHitTestVisible="False" />
+                <ToggleButton Name="OpenWindowsNavButton" Grid.Column="1" Click="OpenWindowsNavButton_Click" />
+                <TextBlock Grid.Column="1" Style="{StaticResource ButtonTextStyle}" Text="Window Selection" IsHitTestVisible="False" />
+                <ToggleButton Name="ConfigurationNavButton" Grid.Column="2" Click="ConfigurationNavButton_Click" />
+                <TextBlock Grid.Column="2" Style="{StaticResource ButtonTextStyle}" Text="Window Configuration" IsHitTestVisible="False" />
+                <ToggleButton Name="PerformanceNavButton" Grid.Column="3" Click="PerformanceNavButton_Click" />
+                <TextBlock Grid.Column="3" Style="{StaticResource ButtonTextStyle}" Text="Performance Monitor" IsHitTestVisible="False" />
+                <ToggleButton Name="BordeXOptionsNavButton" Grid.Column="4" Click="BordeXOptionsNavButton_Click" />
+                <TextBlock Grid.Column="4" Style="{StaticResource ButtonTextStyle}" Text="Settings" IsHitTestVisible="False" />
+            </Grid>
+            <Frame Name="ContentFrame" Grid.Row="2" NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+</Window>

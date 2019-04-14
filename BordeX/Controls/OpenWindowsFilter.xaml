@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="BordeX.Controls.OpenWindowsFilter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BordeX.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="570"
+             Width="782" Height="58" Background="#90000000">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BordeX;component/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Name="Main">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" FontSize="14" Text="Search Filter:" />
+            <TextBox Name="SearchFilter" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" TextChanged="SearchFilter_TextChanged" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" FontSize="14" Text="Graphical Interface Filter:" />
+            <ComboBox Name="GITypeFilter" Grid.Column="1" SelectedIndex="0" SelectionChanged="GITypeFilter_SelectionChanged" />
+        </Grid>
+    </Grid>
+</UserControl>

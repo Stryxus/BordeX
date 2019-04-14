@@ -1,0 +1,63 @@
+﻿<Page x:Class="BordeX.Pages.WindowSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:controls="clr-namespace:BordeX.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="814" d:DesignWidth="588" Background="Transparent" 
+      Title="OpenWindowsView" Height="570" Width="800">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BordeX;component/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Name="Main" Background="#40000000">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid Name="TopMessage" Grid.Row="0" Background="#606060">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" FontSize="14" Text="Select a window for configuration, double click to immediatly go to the configuration page" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="18" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold" Text="Window Title" />
+            <Image Grid.Column="2" Source="/BordeX;component/Assets/profileSave.png" Margin="4" ToolTip="Has saved configuration" />
+            <Image Grid.Column="3" Source="/BordeX;component/Assets/admin.png" Margin="4" ToolTip="Is running in an admin context" />
+            <TextBlock Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold" Text="GDI Type" ToolTip="Graphics Device Interface which the application is using" />
+        </Grid>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel>
+                <WrapPanel Name="OpenWindowsList" Loaded="OpenWindowsList_Loaded" Unloaded="OpenWindowsList_Unloaded" />
+            </StackPanel>
+        </ScrollViewer>
+        <controls:OpenWindowsFilter Grid.Row="2" x:Name="FilterControl" VerticalAlignment="Bottom" HorizontalAlignment="Left" Visibility="Hidden" />
+        <Grid Grid.Row="3" Background="#30000000">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Name="ConfigureButton" Grid.Column="0" Style="{StaticResource ButtonAlt}" IsEnabled="False" Click="ConfigureButton_Click" />
+            <TextBlock Grid.Column="0" Style="{StaticResource ButtonTextStyle}" Text="Configure Selected Window" IsHitTestVisible="False" />
+            <Button Name="FiltersButton" Grid.Column="1" Style="{StaticResource ButtonAlt}" Click="FiltersButton_Click" />
+            <TextBlock Grid.Column="1" Style="{StaticResource ButtonTextStyle}" Text="Filter Windows" IsHitTestVisible="False" />
+            <Button Name="RefreshButton" Grid.Column="2" Style="{StaticResource ButtonAlt}" Click="RefreshButton_Click" />
+            <TextBlock Grid.Column="2" Style="{StaticResource ButtonTextStyle}" Text="Refresh Windows List" IsHitTestVisible="False" />
+        </Grid>
+    </Grid>
+</Page>

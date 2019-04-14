@@ -1,0 +1,13 @@
+﻿XX/XX/2017 - Initial Release 1.0.0:
+    - BordeX's Intial Release on Steam
+    
+Current TODO:
+    - Add monitor selection, this will let you place the window on any monitor other than the primary
+    - Change the current window preview programming with something native and optimized
+    - Add steam achievements
+    - Make the New and Changelogs page cleaner
+    - Possibly add UWP app support (This has proven to be difficult)
+    - Add Vulkan detection
+    - Add language manager
+    
+    - Want to suggest something? Put it on the steam forum for a chance for it to be put here!

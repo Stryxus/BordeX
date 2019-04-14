@@ -1,0 +1,18 @@
+﻿Setting for add window retries
+Fix saving of profiles, only 1 profile is saved
+Fix system thinking a window has a saveprofile when it doesnt but has no window title
+Fix keyboard listener so that users can re-apply the profile on the current window
+Add contributors window
+Add process/window information to configuration page as well as executable information in a seperate window accessable through a button
+Add all profiles management window
+Add timers to profiles which can be disabled that re-apply profiles to windows
+Add option to disable/enable profile completely
+Add ability to move window and bind it to taskbar
+Importing and exporting profile clusters
+
+Add game image capture
+Add game video capture
+
+Add thermal monitors and optional overheating notifications, allow temperature limit to be set for notification.
+
+Add early check to see if the application can be run in admin, if so reboot the application in an admin context
